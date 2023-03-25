@@ -1,0 +1,16 @@
+# # Byte-compiled / optimized / DLL files
+__pycache__/
+src/model/__pycache__/
+src/pipe/__pycache__/
+# *.py[cod]
+# *$py.class
+
+# # Files Result:
+src/data/data_result/zones/*/*.csv
+# # Logs:
+*.log
+
+# # Environments
+.env
+config.json
+venv
