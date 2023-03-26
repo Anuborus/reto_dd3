@@ -1,13 +1,13 @@
+from apscheduler.schedulers.blocking import BlockingScheduler
+from apscheduler.triggers.interval import IntervalTrigger
 from src.service import DataService
-import time
 
+scheduler = BlockingScheduler()
+@scheduler.scheduled_job(IntervalTrigger(hours=1))
 def main():
     servicio = DataService()
     servicio.dataextraction()
     servicio.dataprocess()
     servicio.datawriter()
 
-if __name__=='__main__':
-    while True:
-        main()
-        time.sleep(3600)
+scheduler.start()
